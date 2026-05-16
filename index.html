@@ -13,13 +13,16 @@
         }
 
         :root {
-            --primary: #0A0A0A;
-            --secondary: #1A1A1A;
-            --accent: #FF6B35;
-            --accent-light: #FF8C5A;
-            --text: #FFFFFF;
-            --text-muted: #888888;
-            --border: rgba(255,255,255,0.1);
+            --primary: #0a0a1a;
+            --secondary: #12122a;
+            --accent: #6366f1;
+            --accent-light: #a5b4fc;
+            --accent-dark: #4f46e5;
+            --purple: #8b5cf6;
+            --cyan: #06b6d4;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: rgba(99, 102, 241, 0.2);
         }
 
         html {
@@ -127,7 +130,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
             animation: pulse 8s ease-in-out infinite;
         }
 
@@ -172,10 +177,18 @@
         }
 
         .hero-title span {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            background: linear-gradient(135deg, var(--accent), var(--purple), var(--cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-description {
@@ -272,7 +285,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--cyan));
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -362,7 +375,7 @@
             right: 0;
             width: 150px;
             height: 150px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
             transform: scale(0);
             transition: transform 0.5s ease;
         }
@@ -407,7 +420,7 @@
             transform: translateX(-50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
         }
 
         .contact-title {
@@ -429,7 +442,7 @@
         }
 
         .contact-email:hover {
-            color: var(--accent-light);
+            color: var(--purple);
         }
 
         .contact-description {
